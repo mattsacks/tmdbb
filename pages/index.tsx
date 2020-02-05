@@ -1,7 +1,14 @@
 import React from "react";
+import Banner from "components/Banner";
+import MovieSearch from "components/MovieSearch";
+import PopularMovies from "components/PopularMovies";
 
 export default function Index() {
   return (
-    <h1>Hello world!</h1>
+    <React.Fragment>
+      <Banner />
+      <MovieSearch />
+      <PopularMovies />
+    </React.Fragment>
   );
 }
