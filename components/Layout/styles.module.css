@@ -1,0 +1,3 @@
+.layout {
+  composes: p-4 from global;
+}
