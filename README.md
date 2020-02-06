@@ -13,7 +13,7 @@ nvm use 12
 ```
 
 [`yarn`](https://classic.yarnpkg.com/en/docs/install#mac-stable) is used to
-manage packages and run scripts. Once that's done, the dependencies can be
+manage packages and run scripts. Once that's set up, the dependencies can be
 installed as:
 
 ```sh
