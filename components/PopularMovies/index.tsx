@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import useSWR from "swr";
 import { Movie } from "lib/types";
 import MovieItem from "components/MovieItem";
@@ -18,7 +19,13 @@ export default function PopularMovies() {
   const PopularMovies = data.results
     .slice(0, 12)
     .filter((movie: Movie) => !movie.adult)
-    .map((movie: Movie) => <MovieItem key={movie.id} movie={movie} />);
+    .map((movie: Movie) => (
+      <Link key={movie.id} href="/movies/[movieId]" as={`/movies/${movie.id}`}>
+        <a>
+          <MovieItem movie={movie} />
+        </a>
+      </Link>
+    ));
 
   return (
     <div className="my-6">

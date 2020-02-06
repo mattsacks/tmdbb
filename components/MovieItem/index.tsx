@@ -12,7 +12,9 @@ export default function MovieItem(props: Props) {
   return (
     <div className="pb-4">
       <div className="font-medium mt-1 lg:text-lg clamp-2">
-        <MoviePoster movie={movie} />
+        <div className="border-4 border-black">
+          <MoviePoster movie={movie} />
+        </div>
         {movie.title}
       </div>
     </div>
