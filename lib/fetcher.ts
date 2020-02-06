@@ -7,5 +7,10 @@ export default async function fetcher(key: string): Promise<object> {
       "Content-Type": "application/json;charset=utf-8"
     }
   });
+
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
+
   return await res.json();
 }
