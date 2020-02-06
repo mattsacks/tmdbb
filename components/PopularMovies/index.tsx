@@ -21,7 +21,7 @@ export default function PopularMovies() {
     .filter((movie: Movie) => !movie.adult)
     .map((movie: Movie) => (
       <Link key={movie.id} href="/movies/[movieId]" as={`/movies/${movie.id}`}>
-        <a>
+        <a className="hover:underline">
           <MovieItem movie={movie} />
         </a>
       </Link>
