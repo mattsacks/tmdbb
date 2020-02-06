@@ -7,6 +7,10 @@ const webpackConfig = {
   },
   webpack(config) {
     config.resolve.modules = [path.resolve(__dirname), "node_modules"];
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
     return config;
   }
 };
