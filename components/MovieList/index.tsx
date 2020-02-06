@@ -21,7 +21,11 @@ export default function MovieList({ label, movies }: Props) {
     <div className="my-6">
       <div className="font-bold text-xl">{label}</div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        {MovieItems}
+        {movies.length === 0 ? (
+          <div className="italic text-gray-600 text-lg">No movies found</div>
+        ) : (
+          MovieItems
+        )}
       </div>
     </div>
   );
