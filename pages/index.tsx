@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Banner from "components/Banner";
 import MovieSearch from "components/MovieSearch";
@@ -17,6 +18,9 @@ export default function Index() {
 
   return (
     <React.Fragment>
+      <Head>
+        <title>TMDbB{query ? `: "${query}"` : ""}</title>
+      </Head>
       <Banner />
       <MovieSearch query={query} setQuery={setQuery} />
       {query ? <SearchResults query={query} /> : <PopularMovies />}

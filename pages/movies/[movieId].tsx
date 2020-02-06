@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import day from "dayjs";
@@ -36,6 +37,9 @@ function MoviePage() {
 
   return (
     <React.Fragment>
+      <Head>
+        <title>TMDbB: {movie.title}</title>
+      </Head>
       <Banner />
       <div className="sm:flex">
         <div className="w-1/2 sm:mx-auto mb-4 sm:w-2/5 sm:mr-8">
