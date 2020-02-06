@@ -6,6 +6,26 @@
   /* CSS vars go here */
 }
 
+/* FIXME: Temporary fix for tailwind not having this option */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background: black;
+    color: white;
+  }
+
+  .border-black {
+    border-color: white;
+  }
+
+  .bg-white {
+    background-color: black;
+  }
+
+  input {
+    background-color: black;
+  }
+}
+
 /* FIXME: Use extends for shared styles with other clamps */
 .clamp-2 {
   -webkit-box-orient: vertical;
