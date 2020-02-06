@@ -5,7 +5,10 @@ export default function Banner() {
     <div className="md:text-center mt-2 mb-8 md:mb-10">
       <h1 className="font-black text-5xl">TMDbB</h1>
       <h3 className="italic text-lg text-gray-600 -mt-1">
-        The Movie Database Browserbbbbb
+        <a className="underline" href="https://themoviedb.org">
+          The Movie Database
+        </a>{" "}
+        Browserbbbbb
       </h3>
     </div>
   );

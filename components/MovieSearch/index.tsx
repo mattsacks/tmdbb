@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MovieSearch() {
   return (
-    <div className="flex flex-col text-lg w-full mb-8 md:w-4/5 md:block md:mx-auto lg:w-2/6">
+    <div className="flex flex-col text-xl w-full mb-8">
       <label className="block font-bold" htmlFor="movie-search">
         Find movies!
       </label>

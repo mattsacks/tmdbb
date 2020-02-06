@@ -1,5 +1,7 @@
 import React from "react";
 import useSWR from "swr";
+import { Movie } from "lib/types";
+import MovieItem from "components/MovieItem";
 
 export default function PopularMovies() {
   const { data, error } = useSWR("/movie/popular");
@@ -12,16 +14,18 @@ export default function PopularMovies() {
     return <div>loading...</div>;
   }
 
-  const popularMovies = data.results.slice(0, 10);
+  // Get the top 10 movies and remove any adult ones
+  const PopularMovies = data.results
+    .slice(0, 12)
+    .filter((movie: Movie) => !movie.adult)
+    .map((movie: Movie) => <MovieItem key={movie.id} movie={movie} />);
 
   return (
-    <div>
-      <div className="font-bold text-lg">Current trending</div>
-      <ul className="list-disc ml-6">
-        {popularMovies.map((movie: any) => (
-          <li key={movie.id}>{movie.title}</li>
-        ))}
-      </ul>
+    <div className="my-6">
+      <div className="font-bold text-xl">Currently trending</div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        {PopularMovies}
+      </div>
     </div>
   );
 }
