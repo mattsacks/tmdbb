@@ -1,6 +1,6 @@
 // Join an array of strings together with "and"
 
-export default function listify(list: string[], limit?: number) {
+export default function listify(list: string[], limit?: number): string {
   if (limit) {
     limit = Math.min(limit, list.length);
   } else {
