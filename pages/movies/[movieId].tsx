@@ -43,7 +43,7 @@ function MoviePage() {
         <title>TMDbB: {movie.title}</title>
       </Head>
       <Banner />
-      <div className="sm:flex">
+      <div className="sm:flex mb-4">
         <div className="w-1/2 sm:mx-auto mb-4 sm:w-2/5 sm:mr-8">
           <div className="border-4 sm:border-8 border-black">
             <MoviePoster posterSize={4} movie={movie} />
@@ -55,7 +55,7 @@ function MoviePage() {
           </h2>
           <div className="text-lg">
             <div className="mt-2 italic text-gray-600">{movie.tagline}</div>
-            <div className="my-4">{movie.overview}</div>
+            <p className="my-4">{movie.overview}</p>
             {/* TODO: Extract into component when including more information */}
             <div className="my-4 leading-relaxed">
               {director && (
