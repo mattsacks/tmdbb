@@ -10,9 +10,11 @@ import MoviePoster from "components/MoviePoster";
 function MoviePage() {
   const router = useRouter();
   const { movieId } = router.query;
-  const { data: movie, error: movieError } = useSWR(`/movie/${movieId}`);
+  const { data: movie, error: movieError } = useSWR(
+    movieId ? `/movie/${movieId}` : null
+  );
   const { data: credits, error: creditsError } = useSWR(
-    `/movie/${movieId}/credits`
+    movieId ? `/movie/${movieId}/credits` : null
   );
 
   if (movieError || creditsError) {
